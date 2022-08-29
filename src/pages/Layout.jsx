@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -7,9 +7,11 @@ export class Layout extends Component {
   render() {
     return (
       <React.Fragment>
-        <header className="container-fluid bg-light text-center">
-          <h1>Todo app</h1>
-        </header>
+        <nav className="navbar navbar-expand-lg bg-light">
+            <div className="container-fluid">
+                <Link to="/" className="navbar-brand">Todo app</Link>
+            </div>
+        </nav>
         <main className="container">
           <Outlet />
         </main>
