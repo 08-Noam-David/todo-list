@@ -22,10 +22,12 @@ export class MainPage extends Component {
   }
 
   render() {
+    const { todo } = this.state;
+
     return (
       <React.Fragment>
         <AddBar />
-        <TodoList />
+        <TodoList todo={todo} />
         <FilterButtons />
       </React.Fragment>
     );
