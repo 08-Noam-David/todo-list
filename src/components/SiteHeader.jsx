@@ -5,7 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 export class SiteHeader extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg bg-light mb-3 border-bottom">
+      <nav className="navbar navbar-expand-lg bg-light mb-4 border-bottom">
         <div className="container-fluid">
           <Link to="/" className="navbar-brand">
             Todo app

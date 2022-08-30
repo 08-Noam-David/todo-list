@@ -7,7 +7,7 @@ export class TodoList extends Component {
     const { todos, onToggleDone, onTodoRemove } = this.props;
 
     return (
-      <div className="card mb-3">
+      <div className="card mb-4">
         <ul className="list-group list-group-flush">
           {todos.map((t) => (
             <TodoListItem

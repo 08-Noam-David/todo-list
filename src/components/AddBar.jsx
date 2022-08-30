@@ -28,7 +28,7 @@ export class AddBar extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <div className="d-flex mb-3">
+        <div className="d-flex mb-4">
           <div className="flex-fill me-3">
             <input
               className="form-control"
