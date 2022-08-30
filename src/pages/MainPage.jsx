@@ -11,23 +11,23 @@ export class MainPage extends Component {
     super(props);
 
     this.state = {
-      todo: [],
+      todos: [],
     };
   }
 
   componentDidMount() {
     this.setState(() => ({
-      todo: initialTodo,
+      todos: initialTodo,
     }));
   }
 
   render() {
-    const { todo } = this.state;
+    const { todos } = this.state;
 
     return (
       <React.Fragment>
         <AddBar />
-        <TodoList todo={todo} />
+        <TodoList todos={todos} />
         <FilterButtons />
       </React.Fragment>
     );
