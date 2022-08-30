@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export class TodoListItem extends Component {
   render() {
-    const { name, isDone, id, toggleDone } = this.props;
+    const { name, isDone, id, onToggleDone } = this.props;
 
     return (
       <li className="list-group-item d-flex justify-content-between align-items-start">
@@ -10,7 +10,7 @@ export class TodoListItem extends Component {
           <input
             type="checkbox"
             checked={isDone}
-            onChange={() => toggleDone(id)}
+            onChange={() => onToggleDone(id)}
           />
           <div className="state p-primary">
             <label>{name}</label>

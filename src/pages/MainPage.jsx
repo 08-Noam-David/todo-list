@@ -21,8 +21,7 @@ export class MainPage extends Component {
     }));
   }
 
-  toggleDone = (id) => {
-    console.log(id);
+  onToggleDone = (id) => {
     const todos = [...this.state.todos];
     const changedIdx = todos.findIndex((t) => t.id === id);
     todos[changedIdx].isDone = !todos[changedIdx].isDone;
@@ -36,7 +35,7 @@ export class MainPage extends Component {
     return (
       <React.Fragment>
         <AddBar />
-        <TodoList todos={todos} toggleDone={this.toggleDone} />
+        <TodoList todos={todos} onToggleDone={this.onToggleDone} />
         <FilterButtons />
       </React.Fragment>
     );
