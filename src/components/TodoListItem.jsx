@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export class TodoListItem extends Component {
   render() {
-    const { name, isDone, id, onToggleDone } = this.props;
+    const { name, isDone, id, onToggleDone, onTodoRemove } = this.props;
 
     return (
       <li className="list-group-item d-flex justify-content-between align-items-start">
@@ -16,7 +16,11 @@ export class TodoListItem extends Component {
             <label>{name}</label>
           </div>
         </div>
-        <button role="button" className="btn btn-primary btn-sm">
+        <button
+          role="button"
+          className="btn btn-primary btn-sm"
+          onClick={() => onTodoRemove(id)}
+        >
           <i className="bi bi-trash-fill"></i>
         </button>
       </li>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { nanoid } from 'nanoid';
+
 import AddBar from '../components/AddBar';
 import TodoList from '../components/TodoList';
 import FilterButtons from '../components/FilterButtons';
@@ -29,13 +31,35 @@ export class MainPage extends Component {
     this.setState(() => ({ todos }));
   };
 
+  onTodoAdd = (name) => {
+    const newTodo = {
+      id: nanoid(),
+      name,
+      isDone: false,
+    };
+
+    const todos = [...this.state.todos, newTodo];
+    this.setState(() => ({ todos }));
+  };
+
+  onTodoRemove = (id) => {
+    const todosBefore = [...this.state.todos];
+    const todos = todosBefore.filter((t) => t.id !== id);
+
+    this.setState(() => ({ todos }));
+  };
+
   render() {
     const { todos } = this.state;
 
     return (
       <React.Fragment>
-        <AddBar />
-        <TodoList todos={todos} onToggleDone={this.onToggleDone} />
+        <AddBar onTodoAdd={this.onTodoAdd} />
+        <TodoList
+          todos={todos}
+          onToggleDone={this.onToggleDone}
+          onTodoRemove={this.onTodoRemove}
+        />
         <FilterButtons />
       </React.Fragment>
     );
