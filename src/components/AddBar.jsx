@@ -8,7 +8,7 @@ export class AddBar extends Component {
       task: '',
     };
   }
- 
+
   handleSubmit = (e) => {
     e.preventDefault();
 
@@ -20,15 +20,15 @@ export class AddBar extends Component {
   handleTaskChange = (e) => {
     this.setState(() => ({
       task: e.target.value,
-    }))
-  }
+    }));
+  };
 
   render() {
     const { task } = this.state;
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="row mb-3">
+      <form className="container-fluid" onSubmit={this.handleSubmit}>
+        <div className="row mb-3 me-1">
           <div className="col-sm-10">
             <input
               className="form-control"
@@ -39,11 +39,9 @@ export class AddBar extends Component {
               onChange={this.handleTaskChange}
             />
           </div>
-          <div className="col-sm-2">
-            <button type="submit" className="btn btn-primary">
-              Add
-            </button>
-          </div>
+          <button type="submit" className="btn btn-primary col-sm-2">
+            Add
+          </button>
         </div>
       </form>
     );

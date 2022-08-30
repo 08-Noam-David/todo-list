@@ -1,4 +1,4 @@
-export default [
+const initialData = [
   {
     id: 'QAHkR5bJo1HSPuwEnJ9OI',
     name: 'Print bills',
@@ -25,3 +25,5 @@ export default [
     isDone: true,
   },
 ];
+
+export default initialData;

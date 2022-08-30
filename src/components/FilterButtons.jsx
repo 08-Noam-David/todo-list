@@ -8,11 +8,11 @@ export class FilterButtons extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-4">
-            {/* filters won't change, so we can get away with th index as key */}
+            {/* filters won't change, so we can get away with using index as key */}
             {Object.keys(filters).map((filter, idx) => (
               <button
                 key={idx}
-                className="btn btn-primary"
+                className="btn btn-primary me-1"
                 onClick={() => onChangeFilter(filter)}
               >
                 {filter}

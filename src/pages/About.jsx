@@ -13,7 +13,7 @@ export class About extends Component {
             className="figure-img img-fluid"
           />
           <figcaption className="figure-caption">
-            I don't have a picture of myself so here's a pygmy shrew instead
+            I don't have a picture of myself so here's a pygmy shrew instead.
           </figcaption>
         </figure>
       </div>
