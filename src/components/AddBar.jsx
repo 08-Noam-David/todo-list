@@ -27,9 +27,9 @@ export class AddBar extends Component {
     const { task } = this.state;
 
     return (
-      <form className="container-fluid" onSubmit={this.handleSubmit}>
-        <div className="row mb-3 me-1">
-          <div className="col-sm-10">
+      <form onSubmit={this.handleSubmit}>
+        <div className="d-flex mb-3">
+          <div className="flex-fill me-3">
             <input
               className="form-control"
               type="text"
@@ -39,7 +39,7 @@ export class AddBar extends Component {
               onChange={this.handleTaskChange}
             />
           </div>
-          <button type="submit" className="btn btn-primary col-sm-2">
+          <button type="submit" className="btn btn-primary">
             Add
           </button>
         </div>
