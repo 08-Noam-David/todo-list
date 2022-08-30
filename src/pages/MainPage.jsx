@@ -21,13 +21,22 @@ export class MainPage extends Component {
     }));
   }
 
+  toggleDone = (id) => {
+    console.log(id);
+    const todos = [...this.state.todos];
+    const changedIdx = todos.findIndex((t) => t.id === id);
+    todos[changedIdx].isDone = !todos[changedIdx].isDone;
+
+    this.setState(() => ({ todos }));
+  };
+
   render() {
     const { todos } = this.state;
 
     return (
       <React.Fragment>
         <AddBar />
-        <TodoList todos={todos} />
+        <TodoList todos={todos} toggleDone={this.toggleDone} />
         <FilterButtons />
       </React.Fragment>
     );

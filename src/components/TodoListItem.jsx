@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 
 export class TodoListItem extends Component {
   render() {
-    const { name, isDone } = this.props;
+    const { name, isDone, id, toggleDone } = this.props;
 
     return (
       <li className="list-group-item d-flex justify-content-between align-items-start">
         <div className="pretty p-default">
-          {/* defaultChecked is used because right now we have no onChange handler */}
-          <input type="checkbox" defaultChecked={isDone} />
+          <input
+            type="checkbox"
+            checked={isDone}
+            onChange={() => toggleDone(id)}
+          />
           <div className="state p-primary">
             <label>{name}</label>
           </div>

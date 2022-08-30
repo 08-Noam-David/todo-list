@@ -4,13 +4,13 @@ import TodoListItem from './TodoListItem';
 
 export class TodoList extends Component {
   render() {
-    const { todos } = this.props;
+    const { todos, toggleDone } = this.props;
 
     return (
       <div className="card">
         <ul className="list-group list-group-flush">
           {todos.map((t) => (
-            <TodoListItem key={t.id} {...t} />
+            <TodoListItem key={t.id} toggleDone={toggleDone} {...t} />
           ))}
         </ul>
       </div>
