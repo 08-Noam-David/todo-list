@@ -2,13 +2,22 @@ import React, { Component } from 'react';
 
 export class FilterButtons extends Component {
   render() {
+    const { filters, onChangeFilter } = this.props;
+
     return (
       <div className="container">
         <div className="row">
           <div className="col-md-4">
-            <button className="btn btn-primary">ALL</button>
-            <button className="btn btn-primary">COMPLETED</button>
-            <button className="btn btn-primary">LEFT</button>
+            {/* filters won't change, so we can get away with th index as key */}
+            {Object.keys(filters).map((filter, idx) => (
+              <button
+                key={idx}
+                className="btn btn-primary"
+                onClick={() => onChangeFilter(filter)}
+              >
+                {filter}
+              </button>
+            ))}
           </div>
         </div>
       </div>

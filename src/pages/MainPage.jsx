@@ -7,13 +7,27 @@ import TodoList from '../components/TodoList';
 import FilterButtons from '../components/FilterButtons';
 
 import initialTodo from '../data/initialData';
+import filterTypes from '../data/filterTypes';
 
 export class MainPage extends Component {
   constructor(props) {
     super(props);
+    
+    this.filters = {
+      [filterTypes.ALL]() {
+        return true;
+      },
+      [filterTypes.COMPLETED](todo) {
+        return todo.isDone;
+      },
+      [filterTypes.LEFT](todo) {
+        return !todo.isDone;
+      }
+    };
 
     this.state = {
       todos: [],
+      filter: filterTypes.ALL,
     };
   }
 
@@ -49,18 +63,22 @@ export class MainPage extends Component {
     this.setState(() => ({ todos }));
   };
 
+  onChangeFilter = (filter) => this.setState(() => ({ filter }));
+
   render() {
-    const { todos } = this.state;
+    const { todos, filter } = this.state;
+
+    const filteredTodos = todos.filter(this.filters[filter]);
 
     return (
       <React.Fragment>
         <AddBar onTodoAdd={this.onTodoAdd} />
         <TodoList
-          todos={todos}
+          todos={filteredTodos}
           onToggleDone={this.onToggleDone}
           onTodoRemove={this.onTodoRemove}
         />
-        <FilterButtons />
+        <FilterButtons filters={this.filters} onChangeFilter={this.onChangeFilter} />
       </React.Fragment>
     );
   }
