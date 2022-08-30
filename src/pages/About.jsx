@@ -15,6 +15,10 @@ export class About extends Component {
           <figcaption className="figure-caption">
             I don't have a picture of myself so here's a pygmy shrew instead.
           </figcaption>
+          <p>
+            I honestly still can't believe I've actually finished it in time,
+            let alone style it with such accuracy to the picture.
+          </p>
         </figure>
       </div>
     );
