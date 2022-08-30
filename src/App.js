@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'pretty-checkbox/dist/pretty-checkbox.min.css';
 
+import 'bootstrap/dist/js/bootstrap.js'
+
 import Layout from "./pages/Layout";
 import MainPage from "./pages/MainPage";
 import About from './pages/About';
